@@ -1,16 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<Nav/>
+
+   <router-view :data="data"></router-view>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Nav from './Nav';
+
+import data from './data'
+
+
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data(){
+  return {
+  data: data
   }
+  },
+
+  components: {
+    Nav,
+        data,
+
+  },
 }
 </script>
 
@@ -21,6 +36,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
 }
 </style>
